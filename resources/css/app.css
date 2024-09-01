@@ -1,0 +1,5 @@
+.custom-header .container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
