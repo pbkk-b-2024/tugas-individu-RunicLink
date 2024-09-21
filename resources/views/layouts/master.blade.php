@@ -61,7 +61,7 @@
     <!-- Wrapper -->
     <div class="wrapper">
         <!-- Sidebar -->
-        @include('components.sidebar')
+        @yield('sidebar', View::make('components.sidebar'))
 
         <!-- Main Content -->
         <div class="content">
