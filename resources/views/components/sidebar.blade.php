@@ -12,6 +12,7 @@
             <li><a href="/room_services">Room Service</a></li>
             <li><a href="/facilities">Facility</a></li>
             <li><a href="/facility_reservations">Facility Reservation</a></li>
+            <li><a href="https://documenter.getpostman.com/view/38662968/2sAXqzWJ8f">Dokumentasi API</a></li>
         </ul>
     </nav>
 </aside>
