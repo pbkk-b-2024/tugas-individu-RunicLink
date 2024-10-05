@@ -14,7 +14,7 @@ class Facility extends Model
     protected $keyType = 'char';
 
     protected $fillable = [
-        'id', 'name', 'description'
-    ];
+        'id', 'name', 'description', 'image'
+    ];    
 }
 

@@ -16,6 +16,7 @@ use App\Http\Controllers\Service2Controller;
 use App\Http\Controllers\Facility2Controller;
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\UserTypeMiddleware;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', [HomeController::class, 'checkUserType']);
 
@@ -59,4 +60,5 @@ Route::get('/noaccess', function () {
     return view('noaccess');
 });
 
-
+Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');

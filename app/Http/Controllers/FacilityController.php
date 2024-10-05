@@ -28,10 +28,19 @@ class FacilityController extends Controller
         $request->validate([
             'id' => 'required|unique:facilities',
             'name' => 'required|max:100',
-            'description' => 'nullable'
+            'description' => 'nullable',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
-        Facility::create($request->all());
+        $data = $request->all();
+
+        if ($request->hasFile('image')) {
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images'), $imageName);
+            $data['image'] = $imageName;
+        }
+
+        Facility::create($data);
         return redirect()->route('facilities.index')->with('success', 'Facility created successfully.');
     }
 
@@ -49,10 +58,19 @@ class FacilityController extends Controller
     {
         $request->validate([
             'name' => 'required|max:100',
-            'description' => 'nullable'
+            'description' => 'nullable',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
-        $facility->update($request->all());
+        $data = $request->all();
+
+        if ($request->hasFile('image')) {
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images'), $imageName);
+            $data['image'] = $imageName;
+        }
+
+        $facility->update($data);
         return redirect()->route('facilities.index')->with('success', 'Facility updated successfully.');
     }
 

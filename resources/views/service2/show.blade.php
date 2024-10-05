@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="container mt-5">
-    <h1>Service2 Details</h1>
+    <h1>Service Details</h1>
     <div class="card">
         <div class="card-header">
             Service ID: {{ $service->id }}
@@ -17,4 +17,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('sidebar')
+  @include('components.sidebar_home2')
 @endsection

@@ -12,6 +12,9 @@
         <div class="card-body">
             <h5 class="card-title">Name: {{ $facility->name }}</h5>
             <p class="card-text">Description: {{ $facility->description }}</p>
+            @if($facility->image)
+                <img src="{{ asset('images/' . $facility->image) }}" alt="{{ $facility->name }}" width="200"><br><br>
+            @endif
             <a href="{{ route('facilities.index') }}" class="btn btn-primary">Back to List</a>
         </div>
     </div>

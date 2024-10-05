@@ -1,4 +1,3 @@
-<!-- resources/views/facility2/index.blade.php -->
 @extends('layouts.master')
 
 @section('title', 'Facility2')
@@ -18,6 +17,8 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Image</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +27,11 @@
                 <td>{{ $facility->id }}</td>
                 <td>{{ $facility->name }}</td>
                 <td>{{ $facility->description }}</td>
+                <td>
+                    @if($facility->image)
+                        <img src="{{ asset('images/' . $facility->image) }}" alt="{{ $facility->name }}" width="100">
+                    @endif
+                </td>
                 <td>
                     <a href="{{ route('facility2.show', $facility->id) }}" class="btn btn-info">View</a>
                 </td>

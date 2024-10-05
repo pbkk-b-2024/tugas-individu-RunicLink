@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="container mt-5">
-    <h1>Room2 Details</h1>
+    <h1>Room Details</h1>
     <div class="card">
         <div class="card-header">
             Room ID: {{ $room->id }}
@@ -19,4 +19,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('sidebar')
+  @include('components.sidebar_home2')
 @endsection

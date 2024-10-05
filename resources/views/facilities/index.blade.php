@@ -16,6 +16,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Image</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -25,6 +26,11 @@
                 <td>{{ $facility->id }}</td>
                 <td>{{ $facility->name }}</td>
                 <td>{{ $facility->description }}</td>
+                <td>
+                    @if($facility->image)
+                        <img src="{{ asset('images/' . $facility->image) }}" alt="{{ $facility->name }}" width="100">
+                    @endif
+                </td>
                 <td>
                     <a href="{{ route('facilities.show', $facility->id) }}" class="btn btn-info">View</a>
                     <a href="{{ route('facilities.edit', $facility->id) }}" class="btn btn-warning">Edit</a>

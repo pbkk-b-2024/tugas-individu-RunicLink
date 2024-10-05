@@ -45,7 +45,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>404 You Don't Have Access to This Page</h1>
+        <h1>You Don't Have Access to This Page</h1>
     </div>
 </body>
 </html>
